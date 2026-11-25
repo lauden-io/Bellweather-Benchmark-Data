@@ -19,9 +19,9 @@ the tables have to match.
 | Report | Raw data | Captures |
 |---|---|---|
 | [1 week, 10–17 November 2026](https://github.com/lauden-io/Bellweather/blob/main/docs/benchmark/2026-11-17-1-week.md) | [2026-11-17-1-week](https://github.com/lauden-io/Bellweather-Benchmark-Data/releases/tag/2026-11-17-1-week) | 10 November 23:00 to 17 November 19:00 UTC |
+| [2 weeks, 10–24 November 2026](https://github.com/lauden-io/Bellweather/blob/main/docs/benchmark/2026-11-24-2-weeks.md) | [2026-11-24-2-weeks](https://github.com/lauden-io/Bellweather-Benchmark-Data/releases/tag/2026-11-24-2-weeks) | 17 November 23:00 to 24 November 19:00 UTC |
 
-Next: 2 weeks (25 November 2026), 30 days (11 December 2026), 3 months,
-6 months and 1 year.
+Next: 30 days (11 December 2026), 3 months, 6 months and 1 year.
 
 ## What a release holds
 
@@ -56,7 +56,9 @@ python benchmark/app/report.py bench.sqlite benchmark/points.json report.md --da
 ```
 
 `load` checks every file against the manifest first. For a later report,
-load every release up to it, oldest first; `--days` and `--end` are the
+load every release up to it, oldest first (for 2 weeks:
+`load bench.sqlite ../2026-11-17-1-week ../2026-11-24-2-weeks`, then
+`--days 14 --end 2026-11-24T23:00`); `--days` and `--end` are the
 report's period (the benchmark started on 10 November 2026 at 23:00 UTC).
 
 The first week was exported from a copy of the add-on's database, with the
